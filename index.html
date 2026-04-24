@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>🐭鼠鼠の回国之旅行程安排</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+
+<meta name="theme-color" content="#f2b6a0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="🐭鼠の旅" />
+
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <h1 id="mainTitle">🐭鼠鼠の回国之旅｜4.28-5.7</h1>
+
+    <input id="titleInput" class="title-input" placeholder="修改标题" />
+
+    <button id="saveTitleBtn" class="title-btn">保存标题</button>
+
+    <p class="hero-kicker">左右滑动查看日期 / 可编辑行程</p>
+  </div>
+</header>
+
+<section class="plans-slider" id="plansSlider"></section>
+
+<section class="plan-details" id="planDetails"></section>
+
+<section class="editor-box">
+  <h2 id="editorTitle">添加行程</h2>
+
+  <input id="dayInput" placeholder="DAY 1" />
+  <input id="dateInput" placeholder="4月28日（周二）" />
+  <input id="tagInput" placeholder="标签：✈️ 出发日" />
+  <input id="summaryInput" placeholder="小标题：gogogo出发咯" />
+  <input id="infoInput" placeholder="交通：✈️ 关西机场-上海浦东" />
+  <input id="subtextInput" placeholder="详情说明：📌 乐桃航空MM079..." />
+
+  <textarea id="itemsInput" placeholder="详细行程，每一行写一条"></textarea>
+
+  <input id="hotelTitleInput" placeholder="住宿标题：酒店名 / 住宿" />
+  <textarea id="hotelTextInput" placeholder="住宿内容"></textarea>
+
+  <button id="savePlanBtn">＋ 添加行程</button>
+  <button id="cancelEditBtn">取消编辑</button>
+</section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  
+
+</body>
+</html>
