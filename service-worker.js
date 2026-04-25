@@ -1,25 +1,29 @@
-const CACHE_NAME = "shushu-travel-v1";
+const dateCards = document.querySelectorAll(".date-card");
+const planPanels = document.querySelectorAll(".plan-panel");
+const addBtn = document.getElementById("addBtn");
 
-const FILES_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json"
-];
+let currentIndex = 0;
 
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE);
-    })
-  );
+function showPlan(index) {
+  currentIndex = index;
+
+  dateCards.forEach((card, i) => {
+    card.classList.toggle("active", i === currentIndex);
+  });
+
+  planPanels.forEach((panel, i) => {
+    panel.classList.toggle("active", i === currentIndex);
+  });
+}
+
+dateCards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    showPlan(index);
+  });
 });
 
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+addBtn.addEventListener("click", () => {
+  alert("这里之后可以做成添加新行程的功能。现在先确认按钮能正常点击。");
 });
+
+showPlan(0);
