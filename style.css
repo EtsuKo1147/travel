@@ -357,3 +357,36 @@ body {
   background: #f4f5f7;   /* 很淡的灰 */
   color: #9aa0a6;        /* 柔和灰字 */
 }
+
+/* 电脑端适配 */
+@media (min-width: 1024px) {
+  body {
+    background: #eef0f6;
+  }
+
+  .app {
+    max-width: 1100px;
+    min-height: 100vh;
+    border-radius: 32px;
+    margin: 32px auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  .top-header {
+    border-radius: 32px 32px 0 0;
+  }
+
+  .date-slider {
+    padding: 0 40px 24px;
+  }
+
+  .date-card {
+    flex: 0 0 220px;
+    min-height: 150px;
+  }
+
+  .main-card {
+    max-width: 760px;
+    margin: 0 auto 48px;
+  }
+}
