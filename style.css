@@ -190,3 +190,74 @@ body {
     padding: 36px;
   }
 }
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-btn,
+.add-btn,
+.save-btn,
+.cancel-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.edit-btn {
+  background: #edf1ff;
+  color: #5576e8;
+}
+
+.add-btn {
+  width: 100%;
+  margin-top: 18px;
+  background: #111;
+  color: white;
+}
+
+.main-card label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #666;
+}
+
+.main-card input,
+.main-card textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fafafa;
+}
+
+.main-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  flex: 1;
+  background: #6b8cff;
+  color: white;
+}
+
+.cancel-btn {
+  flex: 1;
+  background: #eee;
+  color: #333;
+}

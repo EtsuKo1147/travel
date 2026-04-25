@@ -1,4 +1,4 @@
-const plans = [
+const defaultPlans = [
   {
     tag: "✈️ 出发日",
     date: "4月28日（周二）",
@@ -32,29 +32,18 @@ const plans = [
       "20:00｜返回上海"
     ],
     note: "可以写餐厅、交通、门票、想拍照的地方"
-  },
-  {
-    tag: "🏠 休息",
-    date: "4月30日",
-    shortText: "在家休息整理",
-    route: "🏠 上海市内",
-    day: "DAY 3",
-    summary: "📌 休息、整理行李、陪家人、吃好吃的。",
-    scheduleTitle: "🏠 轻松日程",
-    details: [
-      "上午｜睡到自然醒",
-      "中午｜和家人吃饭",
-      "下午｜整理东西",
-      "晚上｜附近散步"
-    ],
-    note: "这一天可以自由安排，不要太累"
   }
 ];
 
+let plans = JSON.parse(localStorage.getItem("travelPlans")) || defaultPlans;
 let currentIndex = 0;
 
 const dateSlider = document.getElementById("dateSlider");
 const mainCard = document.getElementById("mainCard");
+
+function savePlans() {
+  localStorage.setItem("travelPlans", JSON.stringify(plans));
+}
 
 function renderDateCards() {
   dateSlider.innerHTML = "";
@@ -83,11 +72,12 @@ function renderMainCard() {
   const plan = plans[currentIndex];
 
   mainCard.innerHTML = `
-    <h2>${plan.day}</h2>
-
-    <div class="summary">
-      ${plan.summary}
+    <div class="card-top">
+      <h2>${plan.day}</h2>
+      <button class="edit-btn" onclick="openEditor()">编辑</button>
     </div>
+
+    <div class="summary">${plan.summary}</div>
 
     <section class="schedule-box">
       <h3>${plan.scheduleTitle}</h3>
@@ -100,12 +90,93 @@ function renderMainCard() {
       <h3>备注内容：</h3>
       <p>${plan.note}</p>
     </section>
+
+    <button class="add-btn" onclick="addNewPlan()">＋ 添加新一天</button>
   `;
 }
 
 function render() {
   renderDateCards();
   renderMainCard();
+}
+
+function openEditor() {
+  const plan = plans[currentIndex];
+
+  mainCard.innerHTML = `
+    <h2>编辑 ${plan.day}</h2>
+
+    <label>标签</label>
+    <input id="editTag" value="${plan.tag}">
+
+    <label>日期</label>
+    <input id="editDate" value="${plan.date}">
+
+    <label>小卡片文字</label>
+    <input id="editShortText" value="${plan.shortText}">
+
+    <label>路线</label>
+    <input id="editRoute" value="${plan.route}">
+
+    <label>DAY标题</label>
+    <input id="editDay" value="${plan.day}">
+
+    <label>概要</label>
+    <textarea id="editSummary">${plan.summary}</textarea>
+
+    <label>行程标题</label>
+    <input id="editScheduleTitle" value="${plan.scheduleTitle}">
+
+    <label>详细行程（一行一个）</label>
+    <textarea id="editDetails">${plan.details.join("\n")}</textarea>
+
+    <label>备注</label>
+    <textarea id="editNote">${plan.note}</textarea>
+
+    <div class="edit-actions">
+      <button class="save-btn" onclick="saveEdit()">保存</button>
+      <button class="cancel-btn" onclick="render()">取消</button>
+    </div>
+  `;
+}
+
+function saveEdit() {
+  plans[currentIndex] = {
+    tag: document.getElementById("editTag").value,
+    date: document.getElementById("editDate").value,
+    shortText: document.getElementById("editShortText").value,
+    route: document.getElementById("editRoute").value,
+    day: document.getElementById("editDay").value,
+    summary: document.getElementById("editSummary").value,
+    scheduleTitle: document.getElementById("editScheduleTitle").value,
+    details: document.getElementById("editDetails").value.split("\n").filter(item => item.trim() !== ""),
+    note: document.getElementById("editNote").value
+  };
+
+  savePlans();
+  render();
+}
+
+function addNewPlan() {
+  plans.push({
+    tag: "📍 新行程",
+    date: "新日期",
+    shortText: "这里写简短说明",
+    route: "路线信息",
+    day: `DAY ${plans.length + 1}`,
+    summary: "这里写概要内容",
+    scheduleTitle: "行程标题",
+    details: [
+      "上午｜填写安排",
+      "下午｜填写安排",
+      "晚上｜填写安排"
+    ],
+    note: "这里写备注"
+  });
+
+  currentIndex = plans.length - 1;
+  savePlans();
+  render();
 }
 
 render();
