@@ -17,7 +17,8 @@ const defaultPlans = [
   },
   {
     tag: "🌿 苏州",
-    date: "4月29日",
+    tagColor: "green"
+    date: "4月29日(周三)",
     shortText: "苏州oneday",
     route: "🚄 上海 - 苏州",
     day: "DAY 2",
@@ -55,7 +56,7 @@ function renderDateCards() {
     card.className = `date-card ${index === currentIndex ? "active" : ""}`;
 
     card.innerHTML = `
-      <span class="date-tag">${plan.tag}</span>
+      <span class="date-tag ${plan.tagColor||"blue"}">${plan.tag}</span>
       <h2>${plan.date}</h2>
       <p>${plan.shortText}</p>
       <span class="route-pill">${plan.route}</span>

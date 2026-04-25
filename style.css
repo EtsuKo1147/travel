@@ -284,3 +284,63 @@ body {
   border-radius: 999px;
   transition: transform 0.25s ease, width 0.25s ease;
 }
+
+/* 🌸 樱花粉 */
+.date-tag.sakura {
+  background: #ffeef2;
+  color: #d16a7c;
+}
+
+/* 🍊 蜜柑橙 */
+.date-tag.orange {
+  background: #fff3e6;
+  color: #d97706;
+}
+
+/* 🌊 浅海蓝 */
+.date-tag.sky {
+  background: #eaf6ff;
+  color: #3b82f6;
+}
+
+/* 🌿 抹茶绿 */
+.date-tag.matcha {
+  background: #eef8f1;
+  color: #4b8b3b;
+}
+
+/* 🍇 葡萄紫 */
+.date-tag.grape {
+  background: #f3efff;
+  color: #7c5cff;
+}
+
+/* ☁️ 云灰蓝 */
+.date-tag.cloud {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* 🌻 奶油黄 */
+.date-tag.cream {
+  background: #fff9e6;
+  color: #c8a600;
+}
+
+/* 🍑 蜜桃粉 */
+.date-tag.peach {
+  background: #fff1eb;
+  color: #e76f51;
+}
+
+/* 🌲 森林绿 */
+.date-tag.forest {
+  background: #eaf5ef;
+  color: #2f6d4f;
+}
+
+/* 🧊 冰蓝 */
+.date-tag.ice {
+  background: #edf7ff;
+  color: #4da3ff;
+}
