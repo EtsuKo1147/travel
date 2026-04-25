@@ -3,78 +3,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>🐭鼠鼠の回国之旅行程安排</title>
-  
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
 
-<meta name="theme-color" content="#f2b6a0" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="apple-mobile-web-app-title" content="🐭鼠の旅" />
+  <title>🐭鼠鼠の回国之旅</title>
 
-<link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="manifest" href="./manifest.json" />
+
+  <meta name="theme-color" content="#f2b6a0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="鼠鼠旅行" />
+
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
 </head>
-
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then(() => {
-        console.log("PWA service worker registered");
-      })
-      .catch(error => {
-        console.log("Service worker registration failed:", error);
-      });
-  }
-</script>
 
 <body>
 
   <div class="page">
 
     <header class="hero">
-  <div class="hero-overlay"></div>
+      <div class="hero-bg"></div>
 
-  <div class="container hero-content">
-    <h1 id="mainTitle">🐭鼠鼠の回国之旅｜4.28-5.7</h1>
+      <div class="hero-content">
+        <p class="label">2026 Spring Trip</p>
+        <h1>🐭鼠鼠の回国之旅</h1>
+        <p class="subtitle">4.28 - 5.7 行程安排</p>
+      </div>
+    </header>
 
-    <input id="titleInput" class="title-input" placeholder="修改标题" />
+    <section class="date-slider" id="dateSlider">
+      <button class="date-card active" data-index="0">
+        <span>4/28</span>
+        <small>出发</small>
+      </button>
 
-    <button id="saveTitleBtn" class="title-btn">保存标题</button>
+      <button class="date-card" data-index="1">
+        <span>4/29</span>
+        <small>武汉</small>
+      </button>
 
-    <p class="hero-kicker">左右滑动查看日期 / 可编辑行程</p>
+      <button class="date-card" data-index="2">
+        <span>4/30</span>
+        <small>苏州</small>
+      </button>
+
+      <button class="date-card" data-index="3">
+        <span>5/1</span>
+        <small>游玩</small>
+      </button>
+
+      <button class="date-card" data-index="4">
+        <span>5/2</span>
+        <small>住宿</small>
+      </button>
+    </section>
+
+    <main class="plans">
+
+      <section class="plan-panel active">
+        <h2>Day 1｜4月28日 出发日</h2>
+
+        <div class="info-card">
+          <h3>✈️ 飞机信息</h3>
+          <p>大阪关西机场 → 中国</p>
+          <p>请提前确认航班时间、行李和登机口。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🏨 晚上住宿</h3>
+          <p>到达后入住酒店。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>📝 今日备注</h3>
+          <p>带好护照、在留卡、充电器、现金和交通卡。</p>
+        </div>
+      </section>
+
+      <section class="plan-panel">
+        <h2>Day 2｜4月29日 武汉</h2>
+
+        <div class="info-card">
+          <h3>🌸 今日行程</h3>
+          <p>抵达武汉，休息调整。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🍜 想吃的东西</h3>
+          <p>热干面、豆皮、小龙虾、奶茶。</p>
+        </div>
+      </section>
+
+      <section class="plan-panel">
+        <h2>Day 3｜4月30日 苏州</h2>
+
+        <div class="info-card">
+          <h3>🚄 交通安排</h3>
+          <p>高铁前往苏州。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🏯 推荐行程</h3>
+          <p>平江路、山塘街、苏州园林。</p>
+        </div>
+      </section>
+
+      <section class="plan-panel">
+        <h2>Day 4｜5月1日 游玩日</h2>
+
+        <div class="info-card">
+          <h3>📍 今日计划</h3>
+          <p>根据天气和体力自由调整。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>📸 拍照记录</h3>
+          <p>可以记录每天最喜欢的一张照片。</p>
+        </div>
+      </section>
+
+      <section class="plan-panel">
+        <h2>Day 5｜5月2日 住宿安排</h2>
+
+        <div class="info-card">
+          <h3>🏨 酒店</h3>
+          <p>这里填写酒店名称、地址、入住时间。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🧳 注意事项</h3>
+          <p>检查退房时间、行李寄存、交通路线。</p>
+        </div>
+      </section>
+
+    </main>
+
+    <section class="add-section">
+      <button id="addBtn">＋ 添加行程</button>
+    </section>
+
   </div>
-</header>
 
-<section class="plans-slider" id="plansSlider"></section>
-
-<section class="plan-details" id="planDetails"></section>
-
-<section class="editor-box">
-  <h2 id="editorTitle">添加行程</h2>
-
-  <input id="dayInput" placeholder="DAY 1" />
-  <input id="dateInput" placeholder="4月28日（周二）" />
-  <input id="tagInput" placeholder="标签：✈️ 出发日" />
-  <input id="summaryInput" placeholder="小标题：gogogo出发咯" />
-  <input id="infoInput" placeholder="交通：✈️ 关西机场-上海浦东" />
-  <input id="subtextInput" placeholder="详情说明：📌 乐桃航空MM079..." />
-
-  <textarea id="itemsInput" placeholder="详细行程，每一行写一条"></textarea>
-
-  <input id="hotelTitleInput" placeholder="住宿标题：酒店名 / 住宿" />
-  <textarea id="hotelTextInput" placeholder="住宿内容"></textarea>
-
-  <button id="savePlanBtn">＋ 添加行程</button>
-  <button id="cancelEditBtn">取消编辑</button>
-</section>
-
-  </div>
-
-  <script src="script.js"></script>
-
-  
-
+  <script src="./script.js"></script>
 </body>
 </html>
