@@ -57,11 +57,11 @@ body {
 
 /* 小日期卡片 */
 .date-card {
-  flex: 0 0 220px;
-  min-height: 165px;
+  flex: 0 0 185px;
+  min-height: 140px;
   background: #fff;
   border-radius: 22px;
-  padding: 18px;
+  padding: 14px;
   scroll-snap-align: start;
   border: 2px solid transparent;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
