@@ -34,11 +34,12 @@ body {
 
 /* 提示文字 */
 .hint {
-  margin: 24px 0 16px;
+  margin: 20px 0 14px;
   text-align: center;
   color: #999;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 /* 日期横向滑动区 */
@@ -82,7 +83,7 @@ body {
 
 .date-card h2 {
   margin: 28px 0 14px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
 }
 
