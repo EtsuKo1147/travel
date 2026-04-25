@@ -5,159 +5,85 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: #f5f5f8;
-  color: #222;
+  background: linear-gradient(180deg, #f7f7f9 0%, #fff6f0 100%);
+  color: #2b2b2b;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 .page {
-  max-width: 900px;
+  max-width: 520px;
   margin: 0 auto;
-  padding: 24px 16px 60px;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }
 
+/* 顶部 */
 .hero {
+  padding: 76px 24px 34px;
   text-align: center;
+}
+
+.label {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
   margin-bottom: 24px;
 }
 
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
-.hero p {
+.subtitle {
+  font-size: 18px;
   color: #888;
-  font-size: 15px;
 }
 
-/* 横向滑动区 */
-.plans-slider {
+/* 日期滑动 */
+.date-slider {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 8px 4px 16px;
-  margin-bottom: 28px;
+  padding: 12px 18px 8px;
 }
 
-.plans-slider::-webkit-scrollbar {
-  height: 8px;
+.date-slider::-webkit-scrollbar {
+  display: none;
 }
 
-.plans-slider::-webkit-scrollbar-thumb {
-  background: #d8d8e5;
+.date-card {
+  flex: 0 0 auto;
+  border: none;
   border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  color: #333;
+  padding: 8px 13px;
+  font-size: 15px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.06);
 }
 
-.plan-card {
-  min-width: 260px;
-  background: #fff;
-  border-radius: 24px;
-  padding: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  border: 2px solid transparent;
-  cursor: pointer;
-  scroll-snap-align: start;
-  transition: all 0.25s ease;
-  flex-shrink: 0;
+.date-card span,
+.date-card small {
+  display: inline;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.plan-card.active {
-  border-color: #6f86ff;
-  transform: translateY(-2px);
+.date-card.active {
+  background: #2b2b2b;
+  color: #fff;
 }
 
-.plan-card h3 {
-  font-size: 24px;
-  margin: 14px 0 10px;
-  line-height: 1.4;
-}
-
-.plan-card p {
-  color: #777;
-  margin-bottom: 14px;
-}
-
-.info {
-  display: inline-block;
-  background: #f3f4fa;
-  color: #555;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 14px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.gogogo {
-  background: #eeffe4; 
-  color: #c85a74;
-}
-
-.suzhou {
-  background: #eaf9e1;
-  color: #347921;
-}
-
-.hefei {
-  background: #f8f8dc; 
-  color: #ba9e12; 
-}
-
-.yuexi {
-  background: #cfe9a8; 
-  color: #036e1c;
-}
- 
-.wuhan {
-  background: #fff0e3; 
-  color: #c97a3d; 
-}
-
-.yuexi {
-  background: #e0ebcf; 
-  color: #036e1c;
-}
-
-.mingtangshan {
-  background: #eafffc;
-  color: #1fb89f;
-}
-
-.yuexi {
-  background: #e0ebcf; 
-  color: #036e1c;
-}
-
-.shanghai {
-  background: #f3ecff; 
-  color: #7a68f2; 
-}
-
-.gogogo {
-  background: #eafcff;
-  color: #1f9bb8;
-}
-
-/* 详情区 */
-.plan-details {
-  margin-top: 10px;
+/* 内容区 */
+.plans {
+  padding: 0 20px;
 }
 
 .plan-panel {
   display: none;
-  background: #fff;
-  border-radius: 28px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 .plan-panel.active {
@@ -165,181 +91,52 @@ body {
 }
 
 .plan-panel h2 {
+  background: #fff;
+  border-radius: 30px 30px 0 0;
+  padding: 30px 26px 12px;
   font-size: 34px;
-  margin-bottom: 12px;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 
-.subtext {
-  color: #777;
-  font-size: 18px;
-  margin-bottom: 24px;
-  line-height: 1.7;
+/* 每一张小卡片 */
+.info-card {
+  background: #fff;
+  padding: 4px 26px 10px;
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
 }
 
-.highlight-box {
-  border: 2px solid #dde3ff;
-  border-left: 6px solid #6f86ff;
-  background: #fafbff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
+.info-card:last-child {
+  border-radius: 0 0 30px 30px;
+  padding-bottom: 28px;
+  box-shadow: 0 18px 40px rgba(150, 120, 100, 0.13);
 }
 
-.highlight-box h4,
-.day-box h4 {
-  color: #5f78ef;
-  font-size: 28px;
-  margin-bottom: 14px;
-}
-
-.highlight-box ul {
-  padding-left: 24px;
-}
-
-.highlight-box li {
-  margin-bottom: 10px;
-  line-height: 1.8;
-  font-size: 22px;
-}
-
-.day-box {
-  background: #f9f9fc;
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.day-box p {
-  font-size: 20px;
-  color: #444;
-  line-height: 1.8;
-}
-
-/* 手机适配 */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  .plan-card {
-    min-width: 220px;
-    padding: 16px;
-  }
-
-  .plan-card h3 {
-    font-size: 20px;
-  }
-
-  .plan-panel {
-    padding: 20px;
-  }
-
-  .plan-panel h2 {
-    font-size: 28px;
-  }
-
-  .highlight-box h4,
-  .day-box h4 {
-    font-size: 22px;
-  }
-
-  .highlight-box li,
-  .day-box p {
-    font-size: 17px;
-  }
-
-  .subtext {
-    font-size: 16px;
-  }
-}
-
-.editor-box {
-  background: #ffffff;
-  border-radius: 28px;
-  padding: 22px;
-  margin-bottom: 28px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-.editor-box h2 {
+.info-card h3 {
   font-size: 24px;
-  margin-bottom: 16px;
+  font-weight: 800;
+  margin-bottom: 3px;
 }
 
-.editor-box input,
-.editor-box textarea {
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  padding: 13px 14px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  font-family: inherit;
+.info-card p {
+  font-size: 19px;
+  line-height: 1.45;
+  color: #333;
 }
 
-.editor-box textarea {
-  min-height: 100px;
-  resize: vertical;
+/* 添加按钮 */
+.add-section {
+  padding: 8px 20px;
 }
 
-#savePlanBtn {
-  width: 100%;
-  background: #6f86ff;
-  color: white;
-  font-weight: bold;
+#addBtn {
   border: none;
   border-radius: 999px;
-  padding: 14px;
+  background: rgba(255,255,255,0.9);
+  color: #222;
+  padding: 7px 14px;
   font-size: 16px;
-}
-
-#cancelEditBtn {
-  display: none;
-  width: 100%;
-  margin-top: 10px;
-  background: #eeeeee;
-  color: #555;
-  border: none;
-  border-radius: 999px;
-  padding: 14px;
-  font-size: 16px;
-}
-
-.card-buttons {
-  display: flex;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.card-buttons button {
-  flex: 1;
-  border: none;
-  border-radius: 999px;
-  padding: 8px 10px;
-  font-size: 13px;
-  background: #f0f2ff;
-  color: #5f78ef;
-}
-
-.title-input {
-  width: 90%;
-  max-width: 420px;
-  margin: 12px auto 8px;
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  padding: 12px 16px;
-  font-size: 16px;
-  text-align: center;
-  background: white;
-}
-
-.title-btn {
-  border: none;
-  border-radius: 999px;
-  padding: 10px 24px;
-  background: #6f86ff;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
