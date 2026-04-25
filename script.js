@@ -30,7 +30,7 @@ const defaultPlans = [
   },
   {
     tag: "🌿 苏州",
-    tagColor: "green",
+    tagColor: "matcha",
     date: "4月29日(周三)",
     shortText: "苏州oneday",
     route: "🚄 上海 - 苏州",
@@ -107,6 +107,7 @@ function renderMainCard() {
       <p>${plan.note}</p>
     </section>
 
+    <button class="delete-btn" onclick="deleteCurrentPlan()">删除这一天</button>
     <button class="add-btn" onclick="addNewPlan()">＋ 添加新一天</button>
   `;
 }
@@ -208,3 +209,23 @@ function addNewPlan() {
 }
 
 render();
+
+function deleteCurrentPlan() {
+  if (plans.length <= 1) {
+    alert("至少要保留一天行程，不能全部删除哦");
+    return;
+  }
+
+  const ok = confirm(`确定要删除「${plans[currentIndex].day}」吗？`);
+
+  if (!ok) return;
+
+  plans.splice(currentIndex, 1);
+
+  if (currentIndex >= plans.length) {
+    currentIndex = plans.length - 1;
+  }
+
+  savePlans();
+  render();
+}

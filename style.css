@@ -344,3 +344,15 @@ body {
   background: #edf7ff;
   color: #4da3ff;
 }
+
+.delete-btn {
+  width: 100%;
+  margin-top: 12px;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #fff0f0;
+  color: #d9534f;
+}
