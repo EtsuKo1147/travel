@@ -11,8 +11,6 @@
 
   <meta name="theme-color" content="#f3f4f8" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="鼠鼠の旅" />
 </head>
 
 <body>
@@ -30,12 +28,15 @@
 
   </div>
 
+  <!-- JS 正确位置 -->
   <script src="script.js"></script>
+
+  <!-- service worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js");
+    }
+  </script>
+
 </body>
 </html>
-
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./service-worker.js");
-}
-</script>
