@@ -107,8 +107,10 @@ function renderMainCard() {
       <p>${plan.note}</p>
     </section>
 
-    <button class="delete-btn" onclick="deleteCurrentPlan()">删除这一天</button>
     <button class="add-btn" onclick="addNewPlan()">＋ 添加新一天</button>
+    
+    <button class="delete-btn" onclick="deleteCurrentPlan()">删除这一天</button>
+   
   `;
 }
 
