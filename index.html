@@ -24,6 +24,12 @@
 
     <section class="date-slider" id="dateSlider"></section>
 
+  <div class="indicator-wrap">
+  <div class="indicator-track">
+    <div class="indicator-thumb" id="indicatorThumb"></div>
+  </div>
+</div>
+
     <main class="main-card" id="mainCard"></main>
 
   </div>
@@ -31,12 +37,6 @@
   <!-- JS 正确位置 -->
   <script src="script.js"></script>
 
-  <!-- service worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./service-worker.js");
-    }
-  </script>
 
 </body>
 </html>
