@@ -6,118 +6,30 @@
 
   <title>🐭鼠鼠の回国之旅</title>
 
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+
+  <meta name="theme-color" content="#f3f4f8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="鼠鼠の旅" />
 </head>
 
 <body>
+  <div class="app">
 
-<div class="app">
+    <header class="top-header">
+      <h1>🐭 鼠鼠の回国之旅｜4.28-5.7</h1>
+    </header>
 
-  <header class="top">
-    <h1>🐭鼠鼠の回国之旅｜4.28-5.7</h1>
-    <p>＞左右滑动查看日期＜</p>
-  </header>
+    <p class="hint">&gt;左右滑动查看日期&lt;</p>
 
-  <!-- 日期卡片滑动区 -->
-  <section class="trip-slider" id="tripSlider">
+    <section class="date-slider" id="dateSlider"></section>
 
-    <div class="trip-card active" data-index="0">
-      <span class="tag blue">✈️ 出发日</span>
-      <h2>4月28日（周二）</h2>
-      <p>gogogo出发咯</p>
-      <div class="route">✈️ 关西机场-上海浦东</div>
-    </div>
+    <main class="main-card" id="mainCard"></main>
 
-    <div class="trip-card" data-index="1">
-      <span class="tag green">🍃 苏州</span>
-      <h2>4月29日（周三）</h2>
-      <p>苏州oneday</p>
-      <div class="route">🚄 上海-苏州</div>
-    </div>
+  </div>
 
-    <div class="trip-card" data-index="2">
-      <span class="tag yellow">🚄 合肥</span>
-      <h2>4月30日（周四）</h2>
-      <p>高速移动中...</p>
-      <div class="route">🚄 苏州-合肥-岳西</div>
-    </div>
-
-  </section>
-
-  <!-- 内容区 -->
-  <main class="detail">
-
-    <section class="day-panel active">
-      <h2>DAY 1</h2>
-      <p class="summary">📌 乐桃航空MM079｜关西机场T2出发｜浦东机场T2到达｜22:20-00:05</p>
-
-      <div class="schedule-box">
-        <h3>✈️ 大阪-上海（22:20-00:05）</h3>
-        <ul>
-          <li>上班｜9:00AM-19:00PM</li>
-          <li>下班｜去机场-大阪环状线19:04-20:21（T1）-接驳车20:30-20:45（T2）</li>
-          <li>20:50值机-22:20起飞</li>
-          <li>00:05到达浦东机场-打车去酒店</li>
-        </ul>
-      </div>
-
-      <div class="hotel-box">
-        <h3>酒店名</h3>
-        <p>维也纳国际酒店上海浦东机场店</p>
-      </div>
-    </section>
-
-    <section class="day-panel">
-      <h2>DAY 2</h2>
-      <p class="summary">📌 G7586｜上海虹桥-苏州｜11:47开</p>
-
-      <div class="schedule-box">
-        <h3>🚄 上海虹桥-苏州（11:47-12:16）</h3>
-        <ul>
-          <li>上午｜9:40AM-11:20PM｜浦东-虹桥</li>
-          <li>方案1｜打车｜1小时10分钟起</li>
-          <li>方案2｜打车+地铁｜1小时30分钟</li>
-          <li>12:20-12:40｜高铁站打车去吴记小园楼吃饭</li>
-          <li>12:40-14:10｜吃完walk去酒店 checking</li>
-          <li>14:50｜拙政园导游集合</li>
-          <li>逛完园子随便走走</li>
-          <li>我要吃青团</li>
-        </ul>
-      </div>
-
-      <div class="hotel-box">
-        <h3>酒店名</h3>
-        <p>苏州拙政书苑平江路店</p>
-      </div>
-    </section>
-
-    <section class="day-panel">
-      <h2>DAY 3</h2>
-      <p class="summary">📌 G7244｜上海（经停苏州）-合肥南｜12:27开</p>
-
-      <div class="schedule-box">
-        <h3>🚄 上海（经停苏州）-合肥南（12:27-14:38）</h3>
-        <ul>
-          <li>9:30-10:30｜狮子林入园时间</li>
-          <li>12:27-14:38｜苏州-合肥南</li>
-          <li>14:50-15:15｜合肥南打车去黄河路牙科诊所</li>
-          <li>16:00-16:25｜小朱麻辣串，吃完随便逛逛</li>
-          <li>17:45-19:45｜王二小吃土菜</li>
-          <li>20:15-20:35｜遛泡泡</li>
-          <li>20:35-22:35｜开车回岳西</li>
-        </ul>
-      </div>
-
-      <div class="hotel-box">
-        <h3>住宿</h3>
-        <p>回家住</p>
-      </div>
-    </section>
-
-  </main>
-
-</div>
-
-<script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
