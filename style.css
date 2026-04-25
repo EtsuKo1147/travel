@@ -1,142 +1,105 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: linear-gradient(180deg, #f7f7f9 0%, #fff6f0 100%);
-  color: #2b2b2b;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  background: #f5f6f8;
+  font-family: -apple-system;
 }
 
-.page {
+.container {
   max-width: 520px;
-  margin: 0 auto;
-  min-height: 100vh;
-  padding-bottom: 40px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* 顶部 */
-.hero {
-  padding: 76px 24px 34px;
+/* 标题 */
+.header {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.label {
-  font-size: 18px;
+.header h1 {
+  font-size: 20px;
+}
+
+.header p {
   color: #999;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-}
-
-.subtitle {
-  font-size: 18px;
-  color: #888;
-}
-
-/* 日期滑动 */
-.date-slider {
+/* 横向滑动 */
+.card-slider {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   overflow-x: auto;
-  padding: 12px 18px 8px;
+  padding-bottom: 10px;
 }
 
-.date-slider::-webkit-scrollbar {
-  display: none;
+.card {
+  min-width: 220px;
+  background: white;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 2px solid transparent;
 }
 
-.date-card {
-  flex: 0 0 auto;
-  border: none;
+.card.active {
+  border: 2px solid #6a8cff;
+}
+
+/* tag */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.82);
-  color: #333;
-  padding: 8px 13px;
-  font-size: 15px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 
-.date-card span,
-.date-card small {
-  display: inline;
-  font-size: 15px;
-  font-weight: 500;
+.blue { background: #d8eefc; }
+.green { background: #e6f6e6; }
+.yellow { background: #fff3d6; }
+
+.mini {
+  background: #f1f1f1;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
-.date-card.active {
-  background: #2b2b2b;
-  color: #fff;
-}
-
-/* 内容区 */
-.plans {
-  padding: 0 20px;
-}
-
-.plan-panel {
+/* 内容 */
+.panel {
   display: none;
 }
 
-.plan-panel.active {
+.panel.active {
   display: block;
 }
 
-.plan-panel h2 {
-  background: #fff;
-  border-radius: 30px 30px 0 0;
-  padding: 30px 26px 12px;
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: -1px;
+.panel h2 {
+  margin-top: 20px;
 }
 
-/* 每一张小卡片 */
-.info-card {
-  background: #fff;
-  padding: 4px 26px 10px;
-  box-shadow: none;
-  border-radius: 0;
-  margin-bottom: 0;
+.sub {
+  color: #777;
+  margin-bottom: 10px;
 }
 
-.info-card:last-child {
-  border-radius: 0 0 30px 30px;
-  padding-bottom: 28px;
-  box-shadow: 0 18px 40px rgba(150, 120, 100, 0.13);
+/* 蓝色框 */
+.box {
+  background: #f5f7ff;
+  border-left: 6px solid #6a8cff;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 15px;
 }
 
-.info-card h3 {
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 3px;
+.box h4 {
+  color: #6a8cff;
 }
 
-.info-card p {
-  font-size: 19px;
-  line-height: 1.45;
-  color: #333;
-}
-
-/* 添加按钮 */
-.add-section {
-  padding: 8px 20px;
-}
-
-#addBtn {
-  border: none;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.9);
-  color: #222;
-  padding: 7px 14px;
-  font-size: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+/* 酒店 */
+.hotel {
+  background: #f1f1f5;
+  padding: 14px;
+  border-radius: 14px;
 }
