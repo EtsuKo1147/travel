@@ -1,3 +1,16 @@
+const tagColors = [
+  "sky",
+  "matcha",
+  "cream",
+  "sakura",
+  "orange",
+  "grape",
+  "cloud",
+  "peach",
+  "forest",
+  "ice"
+];
+
 const defaultPlans = [
   {
     tag: "✈️ 出发日",
@@ -17,7 +30,7 @@ const defaultPlans = [
   },
   {
     tag: "🌿 苏州",
-    tagColor: "green"
+    tagColor: "green",
     date: "4月29日(周三)",
     shortText: "苏州oneday",
     route: "🚄 上海 - 苏州",
@@ -56,7 +69,7 @@ function renderDateCards() {
     card.className = `date-card ${index === currentIndex ? "active" : ""}`;
 
     card.innerHTML = `
-      <span class="date-tag ${plan.tagColor||"blue"}">${plan.tag}</span>
+      <span class="date-tag ${plan.tagColor || tagColors[index % tagColors.length]}">${plan.tag}</span>
       <h2>${plan.date}</h2>
       <p>${plan.shortText}</p>
       <span class="route-pill">${plan.route}</span>
