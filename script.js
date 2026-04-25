@@ -41,6 +41,8 @@ let currentIndex = 0;
 const dateSlider = document.getElementById("dateSlider");
 const mainCard = document.getElementById("mainCard");
 
+const indicatorThumb = document.getElementById("indicatorThumb");
+
 function savePlans() {
   localStorage.setItem("travelPlans", JSON.stringify(plans));
 }
@@ -95,9 +97,21 @@ function renderMainCard() {
   `;
 }
 
+function updateIndicator() {
+  if (!indicatorThumb || plans.length <= 1) return;
+
+  const trackWidth = 72;
+  const thumbWidth = 24;
+  const maxMove = trackWidth - thumbWidth;
+  const move = (currentIndex / (plans.length - 1)) * maxMove;
+
+  indicatorThumb.style.transform = `translateX(${move}px)`;
+}
+
 function render() {
   renderDateCards();
   renderMainCard();
+  updateIndicator();
 }
 
 function openEditor() {
